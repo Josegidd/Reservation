@@ -30,7 +30,7 @@ Priority: {self.priority}
 
 
 
-# Globals
+# Global
 
 rooms = [None] * 40  # Dynamic array for rooms
 reservations = {}    # Hash table for fast lookup
@@ -55,7 +55,7 @@ def display_rooms():
         row = rooms[i * 8:(i + 1) * 8]
 
         for j, room in enumerate(row):
-            room_number = i * 8 + j + 1  # Convert index → room number (1–40)
+            room_number = i * 8 + j + 1  # Convert index to room number (1–40)
 
             if room is None:
                 print(f"[{room_number}]", end=" ")
@@ -132,9 +132,9 @@ def cancel_reservation(res_id):
     assign_from_waitlist(room_index)
 
 
-# -------------------------------
+
 # Assign from Waitlist
-# -------------------------------
+
 
 def assign_from_waitlist(room_index):
     if waitlist:
@@ -144,12 +144,12 @@ def assign_from_waitlist(room_index):
         rooms[room_index] = reservation
         reservations[reservation.res_id] = reservation
 
-        print(f"🎉 Room {room_index + 1} assigned to {reservation.name} (Priority {reservation.priority})")
+        print(f"🎉 Room {room_index + 1} assigned to {reservation.name} ")
 
 
-# -------------------------------
+
 # Modify Reservation
-# -------------------------------
+
 
 def modify_reservation(res_id):
     if res_id not in reservations:
