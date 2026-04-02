@@ -101,7 +101,7 @@ def book_room(name, student_id, email, priority):
             print(f"Reservation ID: {res_id}")
             return
 
-    # If full , add to waitlist
+    # If full, add to waitlist
     res_id = generate_reservation_id()
     reservation = Reservation(res_id, name, student_id, email, priority, None)
 
